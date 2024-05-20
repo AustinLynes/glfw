@@ -3,8 +3,8 @@ project "GLFW"
 	language "C"
 	staticruntime "off"
 
-	targetdir ("Build/" .. OutputDir .. "/%{prj.name}")
-    objdir ("../Build/Intermediates/" .. OutputDir .. "/%{prj.name}")
+	targetdir ("../../build/" .. outputdir .. "/%{prj.name}")
+    objdir ("../../build/Intermediates/" .. outputdir .. "/%{prj.name}")
 	files
 	{
 		"include/GLFW/glfw3.h",
