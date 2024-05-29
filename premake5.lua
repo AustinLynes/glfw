@@ -3,7 +3,6 @@ project "GLFW"
 	language "C"
 	staticruntime "off"
 
-	targetdir ("../../build/" .. outputdir .. "/%{prj.name}")
     objdir ("../../build/Intermediates/" .. outputdir .. "/%{prj.name}")
 	files
 	{
