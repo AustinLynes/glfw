@@ -1,9 +1,11 @@
 project "GLFW"
 	kind "StaticLib"
 	language "C"
-	staticruntime "off"
-
-    objdir ("../../build/Intermediates/" .. outputdir .. "/%{prj.name}")
+	staticruntime "on"
+	
+    targetdir     (BIN_DIR)
+    objdir        (OBJ_DIR)
+	
 	files
 	{
 		"include/GLFW/glfw3.h",
@@ -76,15 +78,13 @@ project "GLFW"
 			"Dwmapi.lib"
 		}
 
-	filter "configurations:Debug"
-		runtime "Debug"
-		symbols "on"
-
+    filter "configurations:Debug"
+        runtime  "Debug"
+        symbols  "on"
+        optimize "off"
 	filter "configurations:Release"
-		runtime "Release"
-		optimize "on"
-
-	filter "configurations:Dist"
-		runtime "Release"
-		optimize "on"
-        symbols "off"
+        runtime  "release"
+        symbols  "off"
+        optimize "on"
+    filter "platforms:x64"
+        architecture "x64"
